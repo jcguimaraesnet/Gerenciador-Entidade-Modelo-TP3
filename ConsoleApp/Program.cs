@@ -9,7 +9,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            ///REFATORAR MÉTODO MAIN EM MÉTODOS MENORES
+            ///REFATORAR FLUXO DE CÓDIGO EM MÉTODOS MENORES
             
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
             const string pressioneQualquerTecla = "Pressione qualquer tecla para exibir o menu principal ...";
@@ -36,7 +36,9 @@ namespace ConsoleApp
                     {
                         Console.WriteLine("Selecione uma das opções abaixo para visualizar os dados [das entidades] encontrados:");
                         for (var index = 0; index < entidadesEncontradas.Count; index++)
-                            Console.WriteLine($"{index} - {entidadesEncontradas[index].GetInformacao2()}");
+                        {
+                            //Console.WriteLine($"{index} - {entidadesEncontradas[index].Propriedade1}");
+                        }
 
                         if (!ushort.TryParse(Console.ReadLine(), out var indexAExibir) || indexAExibir >= entidadesEncontradas.Count)
                         {
@@ -50,8 +52,8 @@ namespace ConsoleApp
                             var entidade = entidadesEncontradas[indexAExibir];
 
                             Console.WriteLine("Dados [da entidade]");
-                            Console.WriteLine($"[campo string]: {entidade.GetInformacao2()}");
-                            Console.WriteLine($"[campo DateTime]: {entidade.GetInformacao3():dd/MM/yyyy}");
+                            //Console.WriteLine($"[campo string]: {entidade.Propriedade2}");
+                            //Console.WriteLine($"[campo DateTime]: {entidade.Propriedade3:dd/MM/yyyy}");
                             ///IMPRIMIR NO CONSOLE DEMAIS CAMPOS
                             ///INVOCAR E EXIBIR RESULTADO DO MÉTODO DA ENTIDADE QUE CONTEM REGRA DE NEGÓCIO
 
